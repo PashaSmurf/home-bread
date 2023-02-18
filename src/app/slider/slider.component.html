@@ -1,11 +1,13 @@
 <section class="section__cards" id="cards">
     <div class="section__cards__inner">
         <div class="card__search">
-            <input type="search" placeholder="Введите ключевое слово" maxlength="30" id="main__search">
+            <input (keyup.enter)="search($event)" placeholder="Введите ключевое слово" maxlength="30" id="main__search">\
+            total {{total}}
+<!--            <button (keyup)="search($event)">Search</button>-->
         </div>
         <div class="card__inner">
             <div *ngFor="let item of testData" class="card__item">
-                <img src="../../assets/slider_1.jpg" alt="item">
+                <img [src]="item.image_path" alt="item">
                 <div class="card__description">
                     <p class="card__name">{{ item.title }}</p>
                     <p class="name__description">{{ item.short_description }}</p>
@@ -14,4 +16,6 @@
             </div>
         </div>
     </div>
+    <button *ngIf="page > 0" (click)="previousPage()">Go back</button>
+    <button *ngIf="(total / size) - 1 > page" (click)="nextPage()">Go next</button>
 </section>
