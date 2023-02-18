@@ -1,9 +1,10 @@
 <section class="section__cards" id="cards">
     <div class="section__cards__inner">
         <div class="card__search">
-            <input (keyup.enter)="search($event)" placeholder="Введите ключевое слово" maxlength="30" id="main__search">\
-            total {{total}}
+            <input (keyup.enter)="search($event)" placeholder="Введите ключевое слово" maxlength="30" id="main__search">
+            <p>Всего найдено {{total}}</p>
         </div>
+        <p *ngIf="testData.length == 0" class="not_found_text">Ничего не найдено. Попробуй другое ключевое слово</p>
         <div class="card__inner">
             <div *ngFor="let item of testData" class="card__item">
                 <img [src]="item.image_path" alt="item">
@@ -11,11 +12,14 @@
                     <p class="card__name">{{ item.title }}</p>
                     <p class="name__description">{{ item.short_description }}</p>
                     <a [href]="'/card?id=' + item.id"><button class="card__button">подробнее</button></a>
-<!--                    <button (click)="goTo(item.id)" class="card__button"></button>-->
                 </div>
             </div>
         </div>
     </div>
-    <button *ngIf="page > 0" (click)="previousPage()">Go back</button>
-    <button *ngIf="(total / size) - 1 > page" (click)="nextPage()">Go next</button>
+    <div *ngIf="page > 0" (click)="previousPage()" class="slider">
+        <i class="fa-solid fa-circle-chevron-left"></i>
+    </div>
+    <div *ngIf="(total / size) - 1 > page" (click)="nextPage()" class="slider slider__right">
+        <i class="fa-solid fa-circle-chevron-right"></i>
+    </div>
 </section>

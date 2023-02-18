@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {Route, Router} from "@angular/router";
 
 
 export interface Bread {
@@ -8,6 +7,7 @@ export interface Bread {
   title: string;
   short_description: string;
   image_path: string;
+  metadata: any;
 }
 
 export interface ESRecord {
@@ -22,7 +22,7 @@ export interface ESRecord {
 })
 export class SliderComponent implements OnInit {
 
-  constructor(private http: HttpClient, private router: Router) { }
+  constructor(private http: HttpClient) { }
 
   testData: Array<Bread> = []
   size: number = 9;
@@ -46,7 +46,7 @@ export class SliderComponent implements OnInit {
         }
       }
     }
-    this.http.post<any>('http://62.108.34.98:2200/prod_index_2/_search', body).subscribe(response => {
+    this.http.post<any>('http://62.108.34.98:2200/test_index_7/_search', body).subscribe(response => {
       this.total = response.hits.total.value;
       let arr = response.hits.hits as Array<ESRecord>;
       this.testData = arr.map(record => {
@@ -71,5 +71,4 @@ export class SliderComponent implements OnInit {
     this.page = 0;
     this.getESRecords()
   }
-
 }

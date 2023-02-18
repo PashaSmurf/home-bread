@@ -1,1 +1,28 @@
-<p>card works!</p>
+<div class="container container__technological">
+    <section class="technological__card" id="technological">
+        <div class="technological__name">
+            <h2>Технологическая карта <br><span>{{ bread.title }}</span></h2>
+            <img [src]="bread.image_path" title="Вариант готового продукта" alt="изображение">
+        </div>
+        <div *ngFor="let item of bread.metadata">
+            <p>{{ item.title }}</p>
+            <div *ngIf="item.content.length > 1" class="technological__table">
+                <table class="table__recipe">
+                    <thead>
+                    <tr>
+                        <th *ngFor="let head of item.content[0]" class="tg-0lax">{{ head }}</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let row of item.content.slice(1)">
+                        <td *ngFor="let cel of row" class="recipe_item">{{ cel }}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div *ngIf="item.content.length == 1" class="technological__description">
+                <p>{{ item.content[0] }}</p>
+            </div>
+        </div>
+    </section>
+</div>
