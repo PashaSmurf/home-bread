@@ -1,0 +1,17 @@
+<section class="section__cards" id="cards">
+    <div class="section__cards__inner">
+        <div class="card__search">
+            <input type="search" placeholder="Введите ключевое слово" maxlength="30" id="main__search">
+        </div>
+        <div class="card__inner">
+            <div *ngFor="let item of testData" class="card__item">
+                <img src="../../assets/slider_1.jpg" alt="item">
+                <div class="card__description">
+                    <p class="card__name">{{ item.title }}</p>
+                    <p class="name__description">{{ item.short_description }}</p>
+                    <button class="card__button">подробнее</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=David+Libre&family=Inika:wght@400;700&family=Inter:wght@400;700&display=swap');
+
+.section__cards {
+    height: 60rem;
+    width: 100%;
+    background-color: #ffffff;
+    margin: 0 auto;
+    padding: 0;
+    font-family: 'Inika', sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    color: #100c0c;
+}
+
+.section__cards__inner {
+    width: 1220px;
+    margin: 0 auto;
+}
+
+.card__inner {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: space-between;
+    justify-content: space-between;
+}
+
+.card__search {
+    padding: 3rem 0;
+}
+
+.card__item {
+    width: 400px;
+    height: 240px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    text-align: left;
+    margin: 10px 0;
+    background-color: #EDF2EC;
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+}
+
+.card__item img {
+    width: 210px;
+    height: 210px;
+    object-fit: cover;
+    padding: 20px;
+}
+
+.card__description {
+    height: 205px;
+    width: 205px;
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card__name {
+    font-size: 16px;
+    margin: 0;
+}
+
+.name__description {
+    font-size: 12px;
+    margin: 6px 0;
+}
+
+.card__button {
+    width: 130px;
+    height: 45px;
+    margin-top: 50px;
+    border: 3px solid #a5bba9;
+    background-color: #a5bba9;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition-duration: 0.2s;
+    margin-bottom: 1rem;
+}
+
+.card__button:hover {
+    color: #FFFFFF;
+    background-color: #6e8171;
+    border: #6e8171;
+}
+
+#main__search {
+    width: 50.7rem;
+    height: 2.5rem;
+    border: 2px solid #ddbc16;
+    border-radius: 8px;
+    font-size: 20px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+}

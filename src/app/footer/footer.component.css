@@ -1,0 +1,43 @@
+.footer__container {
+    width: 1220px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 7rem;
+    font-size: 17px;
+}
+
+.footer__data {
+    width: 3rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer__text a {
+    text-decoration: none;
+    color: #100c0c;
+}
+
+.social__list {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+.list__item {
+    padding: 5px;
+}
+
+.list__item i {
+    font-size: 2.5rem;
+    color: #6e8171;
+}
+
+.list__item i:hover {
+    color: #a5bba9;
+}
+
+.footer {
+    background-color: #EDF2EC;
+}
