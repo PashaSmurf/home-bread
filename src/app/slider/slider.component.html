@@ -3,7 +3,6 @@
         <div class="card__search">
             <input (keyup.enter)="search($event)" placeholder="Введите ключевое слово" maxlength="30" id="main__search">\
             total {{total}}
-<!--            <button (keyup)="search($event)">Search</button>-->
         </div>
         <div class="card__inner">
             <div *ngFor="let item of testData" class="card__item">
@@ -11,7 +10,8 @@
                 <div class="card__description">
                     <p class="card__name">{{ item.title }}</p>
                     <p class="name__description">{{ item.short_description }}</p>
-                    <button class="card__button">подробнее</button>
+                    <a [href]="'/card?id=' + item.id"><button class="card__button">подробнее</button></a>
+<!--                    <button (click)="goTo(item.id)" class="card__button"></button>-->
                 </div>
             </div>
         </div>

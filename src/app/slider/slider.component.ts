@@ -1,14 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {HttpClient} from "@angular/common/http";
+import {Route, Router} from "@angular/router";
 
 
 export interface Bread {
+  id: string;
   title: string;
   short_description: string;
   image_path: string;
 }
 
-export interface Resp {
+export interface ESRecord {
+  _id: string;
   _source: Bread;
 }
 
@@ -19,7 +22,7 @@ export interface Resp {
 })
 export class SliderComponent implements OnInit {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   testData: Array<Bread> = []
   size: number = 9;
@@ -43,12 +46,11 @@ export class SliderComponent implements OnInit {
         }
       }
     }
-    console.log(body);
     this.http.post<any>('http://62.108.34.98:2200/prod_index_2/_search', body).subscribe(response => {
       this.total = response.hits.total.value;
-      let arr = response.hits.hits as Array<Resp>;
+      let arr = response.hits.hits as Array<ESRecord>;
       this.testData = arr.map(record => {
-        return record._source;
+        return {...record._source, ...{id: record._id}};
       });
     });
   }

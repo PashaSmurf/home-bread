@@ -8,6 +8,8 @@ import {FooterComponent} from './footer/footer.component';
 import {HomeImageComponent} from './home-image/home-image.component';
 import {SliderComponent} from './slider/slider.component';
 import {HttpClientModule} from "@angular/common/http";
+import { WelcomePageComponent } from './welcome-page/welcome-page.component';
+import { CardComponent } from './card/card.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import {HttpClientModule} from "@angular/common/http";
     HeaderComponent,
     FooterComponent,
     HomeImageComponent,
-    SliderComponent
+    SliderComponent,
+    WelcomePageComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,
