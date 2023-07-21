@@ -19,7 +19,7 @@ export class CardComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.http.get<any>('http://62.108.34.98:2200/test_index_7/_doc/' + this.router.url.split('?id=')[1]).subscribe(response => {
+    this.http.get<any>('http://78.111.73.205:2200/test_index_7/_doc/' + this.router.url.split('?id=')[1]).subscribe(response => {
       this.bread = response._source as Bread;
     });
   }

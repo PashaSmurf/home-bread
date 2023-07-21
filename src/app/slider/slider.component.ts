@@ -46,7 +46,7 @@ export class SliderComponent implements OnInit {
         }
       }
     }
-    this.http.post<any>('http://62.108.34.98:2200/test_index_7/_search', body).subscribe(response => {
+    this.http.post<any>('http://78.111.73.205:2200/test_index_7/_search', body).subscribe(response => {
       this.total = response.hits.total.value;
       let arr = response.hits.hits as Array<ESRecord>;
       this.testData = arr.map(record => {
